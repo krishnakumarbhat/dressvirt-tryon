@@ -1,19 +1,9 @@
-# Dressing in Order
-[👕 __ICCV'21 Paper__](https://openaccess.thecvf.com/content/ICCV2021/html/Cui_Dressing_in_Order_Recurrent_Person_Image_Generation_for_Pose_Transfer_ICCV_2021_paper.html) |
-[:jeans: __Project Page__](https://cuiaiyu.github.io/dressing-in-order) |
-[:womans_clothes: __arXiv__](https://cuiaiyu.github.io/dressing-in-order/Cui_Dressing_in_Order.pdf) |
-[🎽 __Video Talk__](https://youtu.be/z0UgPSTEdVo) |
-[:dress: __Running This Code__](#get-started)
+# Dressvirt-tryon
+
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dressing-in-order-recurrent-person-image/pose-transfer-on-deep-fashion)](https://paperswithcode.com/sota/pose-transfer-on-deep-fashion?p=dressing-in-order-recurrent-person-image)
 
-The official implementation of __"Dressing in Order: Recurrent Person Image Generation for Pose Transfer, Virtual Try-on and Outfit Editing."__ 
-by
-[Aiyu Cui](https://cuiaiyu.github.io),
-[Daniel McKee](http://danielbmckee.com) and
-[Svetlana Lazebnik](https://slazebni.cs.illinois.edu).
- (ICCV 2021)
- 
+
  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WfeKTPtt3qtlcTlrX47J03mxUzbVvyrL?usp=sharing)
  
 
@@ -103,42 +93,5 @@ sh scripts/run_train.sh
 ```
 Run ```tensorboard --logdir checkpoints/$EXP_NAME/train``` to check tensorboard.
 
-*Note: Resetting discriminators may help training when it stucks at local minimals.*
 
-----
-## Evaluations
 
-__Download Generated Images__ 
-
-Here are our generated images which are used for the evaluation reported in the paper. (Deepfashion Dataset) 
-- [\[256x176\]](https://drive.google.com/drive/folders/1GOQVMhBKvANKutLDbzPbE-Zrb6ai9Eo8?usp=sharing)
-- [\[256x256\]](https://drive.google.com/drive/folders/1GOQVMhBKvANKutLDbzPbE-Zrb6ai9Eo8?usp=sharing)
-
-__SSIM, FID and LPIPS__
-
-To run evaluation (SSIM, FID and LPIPS) on pose transfer task: 
-```
-sh scripts/run_eval.sh
-```
-please always specific ```--frozen_flownet``` for inference.
-
----
-## Cite us!
-If you find this work is helpful, please consider starring :star2: this repo and citing us as
-```
-@InProceedings{Cui_2021_ICCV,
-    author    = {Cui, Aiyu and McKee, Daniel and Lazebnik, Svetlana},
-    title     = {Dressing in Order: Recurrent Person Image Generation for Pose Transfer, Virtual Try-On and Outfit Editing},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    month     = {October},
-    year      = {2021},
-    pages     = {14638-14647}
-}
-```
-## Acknowledgements
-This repository is built up on [GFLA](https://github.com/RenYurui/Global-Flow-Local-Attention),
-[pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix), 
-[PATN](https://github.com/tengteng95/Pose-Transfer) and 
-[MUNIT](https://github.com/NVlabs/MUNIT). Please be aware of their licenses when using the code. 
-
-Thanks a lot for the great work to the pioneer researchers!
