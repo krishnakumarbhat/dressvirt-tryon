@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Virtual Try-On{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Virtual Try-On</h1>
+
+    {% if message %}
+    <div class="alert alert-{{ message.category }} mt-3">
+        {{ message.message }}
+    </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data" class="mt-3">
+        <div class="form-group">
+            <label for="personImage">Person Image:</label>
+            <input type="file" id="personImage" name="person_image" accept=".png, .jpg, .jpeg, .gif" required>
+        </div>
+        <div class="form-group">
+            <label for "shirtImage">Shirt Image:</label>
+            <input type="file" id="shirtImage" name="shirt_image" accept=".png, .jpg, .jpeg, .gif" required>
+        </div>
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Upload Images</button>
+        </div>
+    </form>
+
+    {% if person_image_path and shirt_image_path %}
+    <div class="mt-5">
+        <h2 class="text-center">Uploaded Images</h2>
+        <div class="row mt-3">
+            <div class="col-md-6 text-center">
+                <h3>Person Image</h3>
+                <img src="{{ person_image_path }}" alt="Person Image" class="img-fluid">
+            </div>
+            <style>.img-fluid {
+                max-width: 100%;
+                height: auto;
+              }
+              </style>
+            <div class="col-md-6 text-center">
+                <h3>Shirt Image</h3>
+                <img src="{{ shirt_image_path }}" alt="Shirt Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if output_image_path %}
+    <div class="mt-5">
+        <h2 class="text-center">Virtual Try-On Result</h2>
+        <div class="row mt-3">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h3>Output Image</h3>
+                <img src="{{ output_image_path }}" alt="Output Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
