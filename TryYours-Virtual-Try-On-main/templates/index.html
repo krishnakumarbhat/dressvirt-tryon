@@ -1,0 +1,62 @@
+from flask import Flask, send_file
+import os
+
+# Install required libraries
+!pip install pyngrok==4.1.1
+!pip install flask_ngrok
+
+# Import necessary libraries
+from flask import Flask, request, render_template
+from flask_ngrok import run_with_ngrok
+from werkzeug.utils import secure_filename
+import os
+import cv2
+import matplotlib.pyplot as plt
+from PIL import Image
+from flask_ngrok import run_with_ngrok
+from flask import Flask, render_template
+
+# Set ngrok authentication token
+!ngrok authtoken 2Y7g9RpEVDkJ4dUd2BZjo5yxeIY_4vnUssyfLZaCh4GaSwij2
+
+# Initialize Flask app
+app = Flask(__name__)
+
+# Use ngrok to expose the app to the internet
+run_with_ngrok(app)
+
+# Define route to render the HTML page
+@app.route("/")
+def index():
+    # Define image paths
+    # image_path = "/content/TryYours-Virtual-Try-On/HR-VITON-main/test/test/image/00001_00.jpg"
+    # image_path2 = "/content/TryYours-Virtual-Try-On/HR-VITON-main/test/test/cloth/00001_00.jpg"
+    # image_path3 = "/content/TryYours-Virtual-Try-On/static/finalimg.png"
+    image_path = 'static/origin_web.jpg'
+    image_path2 = 'static/cloth_web.jpg'
+    image_path3 = 'static/finalimg.png'
+
+    # Check if image files exist
+    if os.path.exists(image_path) and os.path.exists(image_path2) and os.path.exists(image_path3):
+        # Return HTML code with image paths
+        return f"""
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Image Display</title>
+        </head>
+        <body>
+            <h1>Virtual Try On using HR-Viton</h1>
+            <img src="{image_path}" alt="person image">
+            <img src="{image_path2}" alt="cloth image">
+            <img src="{image_path3}" alt="final overlap image">
+        </body>
+        </html>
+        """
+    else:
+        return "Image not found."
+
+if __name__ == "__main__":
+    app.run()
