@@ -1,0 +1,180 @@
+{
+  "system": {
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB, 3757 MiB, 580.126.18",
+    "memory": "total        used        free      shared  buff/cache   available\nMem:            23Gi        11Gi       2.3Gi       1.0Gi       9.0Gi       8.3Gi\nSwap:           15Gi       1.9Gi        14Gi",
+    "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme0n1p5  193G  137G   56G  72% /media/pope/projecteo",
+    "opencv_status": "ImportError: numpy.core.multiarray failed to import"
+  },
+  "dataset_size_mb": 1.6399402618408203,
+  "assets": [
+    {
+      "name": "yale_reference",
+      "image_path": "TryYours-Virtual-Try-On-main/HR-VITON-main/test/test/cloth/00001_00.jpg",
+      "mask_path": "TryYours-Virtual-Try-On-main/HR-VITON-main/test/test/cloth-mask/00001_00.jpg",
+      "reference_path": "TryYours-Virtual-Try-On-main/HR-VITON-main/Output/00001_00_00001_00.png"
+    },
+    {
+      "name": "cvzone_green",
+      "image_path": "TryYours-Virtual-Try-On/webpage-20231110T073429Z-001/webpage/Shirts/1.png",
+      "mask_path": null,
+      "reference_path": null
+    },
+    {
+      "name": "cvzone_blue",
+      "image_path": "TryYours-Virtual-Try-On/webpage-20231110T073429Z-001/webpage/Shirts/2.png",
+      "mask_path": null,
+      "reference_path": null
+    },
+    {
+      "name": "cvzone_red",
+      "image_path": "TryYours-Virtual-Try-On/webpage-20231110T073429Z-001/webpage/Shirts/3.png",
+      "mask_path": null,
+      "reference_path": null
+    }
+  ],
+  "aggregate": {
+    "mask_box": {
+      "avg_runtime_sec": 0.07138572099938756,
+      "avg_coverage": 0.8400331977852826,
+      "avg_spill": 0.015581726519000739,
+      "avg_outside_ssim": 0.995670728858762,
+      "avg_reference_ssim": 0.0005158998133285297
+    },
+    "pose_quad": {
+      "avg_runtime_sec": 0.12559897674509557,
+      "avg_coverage": 0.8076768442575872,
+      "avg_spill": 0.007287164692938172,
+      "avg_outside_ssim": 0.998685247704456,
+      "avg_reference_ssim": -0.01824018988821706
+    },
+    "hybrid_pose_parse": {
+      "avg_runtime_sec": 0.2632035707538307,
+      "avg_coverage": 0.9986832885335539,
+      "avg_spill": 0.014006525260454315,
+      "avg_outside_ssim": 0.9913870658989814,
+      "avg_reference_ssim": 0.10261705108606534
+    }
+  },
+  "metrics": [
+    {
+      "method": "mask_box",
+      "garment": "yale_reference",
+      "runtime_sec": 0.1570634749950841,
+      "coverage": 0.42326027523146553,
+      "spill": 0.0,
+      "outside_ssim": 0.9999999999999998,
+      "reference_ssim": 0.0005158998133285297,
+      "output_file": "yale_reference_mask_box.png"
+    },
+    {
+      "method": "pose_quad",
+      "garment": "yale_reference",
+      "runtime_sec": 0.15535105799790472,
+      "coverage": 0.8374744411514692,
+      "spill": 0.007032933308611507,
+      "outside_ssim": 0.9984045737719377,
+      "reference_ssim": -0.01824018988821706,
+      "output_file": "yale_reference_pose_quad.png"
+    },
+    {
+      "method": "hybrid_pose_parse",
+      "garment": "yale_reference",
+      "runtime_sec": 0.2686766810074914,
+      "coverage": 0.9979495485560687,
+      "spill": 0.014017143567021408,
+      "outside_ssim": 0.9880551738583229,
+      "reference_ssim": 0.10261705108606534,
+      "output_file": "yale_reference_hybrid_pose_parse.png"
+    },
+    {
+      "method": "mask_box",
+      "garment": "cvzone_green",
+      "runtime_sec": 0.04275745199993253,
+      "coverage": 0.9639132032991017,
+      "spill": 0.020711963693713992,
+      "outside_ssim": 0.995595447464789,
+      "reference_ssim": null,
+      "output_file": "cvzone_green_mask_box.png"
+    },
+    {
+      "method": "pose_quad",
+      "garment": "cvzone_green",
+      "runtime_sec": 0.14446490300178993,
+      "coverage": 0.761906402922324,
+      "spill": 0.007686448790781852,
+      "outside_ssim": 0.9990346730874164,
+      "reference_ssim": null,
+      "output_file": "cvzone_green_pose_quad.png"
+    },
+    {
+      "method": "hybrid_pose_parse",
+      "garment": "cvzone_green",
+      "runtime_sec": 0.3088007909973385,
+      "coverage": 0.999149952902796,
+      "spill": 0.013999824226726843,
+      "outside_ssim": 0.9933617474126598,
+      "reference_ssim": null,
+      "output_file": "cvzone_green_hybrid_pose_parse.png"
+    },
+    {
+      "method": "mask_box",
+      "garment": "cvzone_blue",
+      "runtime_sec": 0.042104184001800604,
+      "coverage": 0.9755783766397867,
+      "spill": 0.020221447698389086,
+      "outside_ssim": 0.995429050668377,
+      "reference_ssim": null,
+      "output_file": "cvzone_blue_mask_box.png"
+    },
+    {
+      "method": "pose_quad",
+      "garment": "cvzone_blue",
+      "runtime_sec": 0.09749479198944755,
+      "coverage": 0.8017839501918349,
+      "spill": 0.0073273249268932805,
+      "outside_ssim": 0.9989237573561639,
+      "reference_ssim": null,
+      "output_file": "cvzone_blue_pose_quad.png"
+    },
+    {
+      "method": "hybrid_pose_parse",
+      "garment": "cvzone_blue",
+      "runtime_sec": 0.2882171640085289,
+      "coverage": 0.9987421600385967,
+      "spill": 0.014005978918622573,
+      "outside_ssim": 0.9928173827420531,
+      "reference_ssim": null,
+      "output_file": "cvzone_blue_hybrid_pose_parse.png"
+    },
+    {
+      "method": "mask_box",
+      "garment": "cvzone_red",
+      "runtime_sec": 0.043617773000732996,
+      "coverage": 0.9973809359707767,
+      "spill": 0.021393494683899884,
+      "outside_ssim": 0.9916584173018822,
+      "reference_ssim": null,
+      "output_file": "cvzone_red_mask_box.png"
+    },
+    {
+      "method": "pose_quad",
+      "garment": "cvzone_red",
+      "runtime_sec": 0.10508515399124008,
+      "coverage": 0.8295425827647207,
+      "spill": 0.00710195174546605,
+      "outside_ssim": 0.9983779866023056,
+      "reference_ssim": null,
+      "output_file": "cvzone_red_pose_quad.png"
+    },
+    {
+      "method": "hybrid_pose_parse",
+      "garment": "cvzone_red",
+      "runtime_sec": 0.18711964700196404,
+      "coverage": 0.9988914926367543,
+      "spill": 0.014003154329446441,
+      "outside_ssim": 0.9913139595828899,
+      "reference_ssim": null,
+      "output_file": "cvzone_red_hybrid_pose_parse.png"
+    }
+  ]
+}
